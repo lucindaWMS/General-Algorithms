@@ -8,13 +8,10 @@ import java.util.Random;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Sorting.SelectionSort;
-
-public class SelectionSortTest {
+public class BubbleSortTest {
 	
 	int[] nums;
 	int[] toCompare;
-	Random rand;
 
 	@BeforeEach
 	public void setUp() throws Exception {
@@ -25,17 +22,17 @@ public class SelectionSortTest {
 			this.nums[i] = rand.nextInt(1000);
 			this.toCompare[i] = this.nums[i];
 		}
-		SelectionSort.sort(this.nums);
+		BubbleSort.sort(this.nums);
 	}
 
 	@Test
-	public void testEuqalLength() {
+	public void testEqualLength() {
 		assertEquals(nums.length, toCompare.length);
 	}
 	
 	@Test
 	public void testIsOrderCorrect() {
-		Arrays.sort(this.toCompare);
+		Arrays.sort(toCompare);
 		for (int i = 0; i < 10; i++) {
 			assertEquals(nums[i], toCompare[i]);
 		}
