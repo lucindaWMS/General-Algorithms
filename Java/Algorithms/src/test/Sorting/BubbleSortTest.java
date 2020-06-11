@@ -27,14 +27,14 @@ public class BubbleSortTest {
 
 	@Test
 	public void testEqualLength() {
-		assertEquals(nums.length, toCompare.length);
+		assertEquals(this.nums.length, this.toCompare.length);
 	}
 	
 	@Test
 	public void testIsOrderCorrect() {
-		Arrays.sort(toCompare);
+		Arrays.sort(this.toCompare);
 		for (int i = 0; i < 10; i++) {
-			assertEquals(nums[i], toCompare[i]);
+			assertEquals(this.nums[i], this.toCompare[i]);
 		}
 	}
 }

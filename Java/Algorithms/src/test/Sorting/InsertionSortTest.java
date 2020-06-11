@@ -8,28 +8,25 @@ import java.util.Random;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Sorting.SelectionSort;
-
-public class SelectionSortTest {
+public class InsertionSortTest {
 	
 	int[] nums;
 	int[] toCompare;
-	Random rand;
 
 	@BeforeEach
 	public void setUp() throws Exception {
-		Random rand = new Random();
 		this.nums = new int[10];
 		this.toCompare = new int[10];
+		Random rand = new Random();
 		for (int i = 0; i < 10; i++) {
 			this.nums[i] = rand.nextInt(1000);
 			this.toCompare[i] = this.nums[i];
 		}
-		SelectionSort.sort(this.nums);
+		InsertionSort.sort(this.nums);
 	}
 
 	@Test
-	public void testEuqalLength() {
+	public void testEqualLength() {
 		assertEquals(this.nums.length, this.toCompare.length);
 	}
 	
@@ -40,4 +37,5 @@ public class SelectionSortTest {
 			assertEquals(this.nums[i], this.toCompare[i]);
 		}
 	}
+
 }
